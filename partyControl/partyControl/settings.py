@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'spotify_api.apps.SpotifyApiConfig',
+    'sportify_api.apps.SportifyApiConfig',
     'rest_framework'
 ]
 
