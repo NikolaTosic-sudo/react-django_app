@@ -1,3 +1,25 @@
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 12:206-226 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 13:329-349 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 16:244-264 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 16:367-387 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 18:128-148 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 18:297-317 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 19:63-83 */
+
+/*! CommonJS bailout: exports.unstable_now(...) prevents optimization as exports is passed as call context at 20:319-339 */
+
+/*! CommonJS bailout: module.exports is used directly at 25:178-192 */
+
+/*! CommonJS bailout: module.exports is used directly at 268:394-408 */
+
+/*! CommonJS bailout: module.exports is used directly at 65:0-14 */
+
 /*! dynamic exports */
 
 /*! export __esModule [maybe provided (runtime-defined)] [no usage info] [provision prevents renaming (no use info)] -> ./node_modules/react-dom/cjs/react-dom.production.min.js .__esModule */
