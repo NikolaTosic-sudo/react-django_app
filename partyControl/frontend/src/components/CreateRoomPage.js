@@ -33,6 +33,20 @@ class CreateRoomPage extends Component {
                                 Guest Control of Playback State
                             </div>
                         </FormHelperText>
+                        <RadioGroup row defaultValue="true">
+                            <FormControlLabel 
+                                value='true' 
+                                control={<Radio color='primary' />}
+                                label="Play/Pause"
+                                labelPlacement='bottom'    
+                            />
+                            <FormControlLabel 
+                                value='false' 
+                                control={<Radio color='secondary' />}
+                                label="No Control"
+                                labelPlacement='bottom'    
+                            />
+                        </RadioGroup>
                     </FormControl>
                 </Grid>
 
