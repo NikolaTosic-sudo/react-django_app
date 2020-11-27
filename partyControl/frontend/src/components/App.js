@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import HomePage from './HomePage'
 
-export default class App extends Component {
+class App extends Component {
     constructor(props){
         super(props)
     }
@@ -17,6 +16,4 @@ export default class App extends Component {
     }
 }
 
-const appDiv = document.getElementById('app');
-
-ReactDOM.render(<App />, appDiv);
+export default App
