@@ -12,13 +12,46 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 
 class CreateRoomPage extends Component {
+
+    defaultVotes = 2
+
     constructor(props){
-        super(props)
+        super(props);
+        this.state = {
+            guestCanPause: true,
+            votesToSkip: this.defaultVotes
+        }
+    }
+
+    handleVotesChange = (e) => {
+        this.setState({
+            votesToSkip: e.target.value
+        })
+    }
+
+    handleGuestCanPauseChange = (e) => {
+        this.setState({
+            guestCanPause: e.target.value === "true" ? true : false
+        })
+    }
+
+    handleRoomButtonPressed = () => {
+        console.log(this.state)
+
+        const requestOptions = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify ({
+                votes_to_skip: this.state.votesToSkip,
+                guest_can_pause: this.state.guestCanPause
+            })
+        };
+        fetch('api/create-room', requestOptions)
+            .then((response) => response.json())
+            .then((data) => console.log(data))
     }
 
     render(){
-
-        const defaultVotes = 2
 
 
         return (
@@ -37,7 +70,7 @@ class CreateRoomPage extends Component {
                                 Guest Control of Playback State
                             </div>
                         </FormHelperText>
-                        <RadioGroup row defaultValue="true">
+                        <RadioGroup row defaultValue="true" onChange={this.handleGuestCanPauseChange}>
                             <FormControlLabel 
                                 value='true' 
                                 control={<Radio color='primary' />}
@@ -59,7 +92,8 @@ class CreateRoomPage extends Component {
                         <TextField 
                             required={true} 
                             type="number" 
-                            defaultValue={defaultVotes}
+                            defaultValue={this.defaultVotes}
+                            onChange={this.handleVotesChange}
                             inputProps={{
                                 min: 1,
                                 style: {
@@ -76,7 +110,7 @@ class CreateRoomPage extends Component {
                 </Grid>
 
                 <Grid item xs={12} align="center">
-                    <Button color="primary" variant="contained">Create A Room</Button>
+                    <Button color="primary" variant="contained" onClick={this.handleRoomButtonPressed}>Create A Room</Button>
                 </Grid>
 
                 <Grid item xs={12} align="center">
