@@ -14,8 +14,8 @@ class HomePage extends Component {
             <Router>
                 <Switch>
                     <Route exact path="/"><p>Home Page</p></Route>
-                    <Route path="/create" component={CreateRoomPage} />
-                    <Route path="/join" component={JoinRoomPage} />
+                    <Route path="/create/" component={CreateRoomPage} />
+                    <Route path="/join/" component={JoinRoomPage} />
                 </Switch>
             </Router>
         )
