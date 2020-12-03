@@ -11,15 +11,13 @@ class Room extends Component {
             guestCanPause: false,
             isHost: false
         }
-        this.roomCode = this.props.match.param.roomCode
-        this.getRoomDetails()
+        this.roomCode = this.props.match.params.roomCode
     }
-
 
     getRoomDetails = () => {
 
         fetch('/api/get-room' + '?code=' + this.roomCode)
-            .then(response => response.json)
+            .then(response => response.json())
             .then(data => {
                 this.setState({
                     votesToSkip: data.votes_to_skip,
@@ -30,15 +28,20 @@ class Room extends Component {
     }
 
 
+    componentDidMount() {
+        this.getRoomDetails()
+    }
+
+
 
     render(){
 
         return (
             <div>
                 <h3>{this.roomCode}</h3>
-                <p>{this.state.votesToSkip}</p>
-                <p>{this.state.guestCanPause.toString()}</p>
-                <p>{this.state.isHost.toString()}</p>
+                <p>Votes: {this.state.votesToSkip}</p>
+                <p>Can Pause: {this.state.guestCanPause.toString().toUpperCase()}</p>
+                <p>Is Host: {this.state.isHost.toString().toUpperCase()}</p>
             </div>
         )
 
