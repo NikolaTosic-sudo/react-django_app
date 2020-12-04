@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { TextField, Button, Grid, Typography } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 
 class JoinRoomPage extends Component {
     constructor(props){
@@ -6,7 +8,11 @@ class JoinRoomPage extends Component {
     }
 
     render(){
-        return <p>Join Room Page</p>
+        return (
+            <Grid container spacing={1}>
+
+            </Grid>
+        )
     }
 }
 
