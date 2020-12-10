@@ -28,8 +28,6 @@ class CreateRoomPage extends Component {
     }
 
     handleRoomButtonPressed = () => {
-        console.log(this.state)
-
         const requestOptions = {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
