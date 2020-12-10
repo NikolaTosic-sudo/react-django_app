@@ -26,6 +26,12 @@ class HomePage extends Component {
             })
     }
 
+    clearRoomCode = () => {
+        this.setState({
+            roomCode: null
+        })
+    }
+
     renderHomePage = () => {
         return (
             <Grid container spacing={3}>
@@ -53,7 +59,12 @@ class HomePage extends Component {
                     }}/>
                     <Route path="/create/" component={CreateRoomPage} />
                     <Route path="/join/" component={JoinRoomPage} />
-                    <Route path="/room/:roomCode" component={Room} />
+                    <Route 
+                        path="/room/:roomCode" 
+                        render={props => {
+                            return <Room {...props} leaveRoomCallback={this.clearRoomCode} />
+                        }} 
+                    />
                 </Switch>
             </Router>
         )
