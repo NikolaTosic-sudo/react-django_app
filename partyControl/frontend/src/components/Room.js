@@ -67,7 +67,7 @@ class Room extends Component {
                         votesToSkip={this.state.votesToSkip} 
                         guestCanPause={this.state.guestCanPause} 
                         roomCode={this.roomCode} 
-                        updateCallback={() => {}}
+                        updateCallback={this.getRoomDetails}
                     />
                 </Grid>
 
